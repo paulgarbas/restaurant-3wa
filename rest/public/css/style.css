@@ -6,8 +6,8 @@ body {
   background: #fff;
   font-size: 16px;
   line-height: 1.6;
-  color: #b8b8b8; }
-
+  color: #b8b8b8;
+}
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -127,13 +127,13 @@ h1, h2, h3, h4, h5,
       transition: .3s all ease-out; }
     .ftco-navbar-light.scrolled .navbar-brand {
       color: #000; }
-
+/*
 .registration-form {
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
-}
+}*/
 
 .navbar-brand {
   text-transform: uppercase;
@@ -141,7 +141,9 @@ h1, h2, h3, h4, h5,
 
 .bg-image, .ftco-cover {
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center; }
 
 .ftco-cover {
   background-position: center center; }
@@ -543,7 +545,7 @@ textarea.form-control {
     #map {
       height: 300px; } }
 
-#reservationModal .close {
+#reservationModal .close, #register .close, #login .close {
   position: absolute;
   right: 30px;
   top: 10px;
@@ -557,13 +559,26 @@ textarea.form-control {
     position: relative;
     top: -2px;
     right: 10px; }
+    @media (min-width: 768px) {
+        .col-md-6 {
+            max-width: 100%;
+        }
+    }
+#register label, #login label {
+    color: #000;
+}
+
+#login label {
+    width: 115px;
+}
+
 
 #reservationModal .modal-content {
   border-radius: 0; }
   #reservationModal .modal-content label {
     color: #000; }
-  #reservationModal .modal-content .modal-body {
-    padding: 0; }
+  #reservationModal .modal-content .modal-body, #register .modal-content .modal-body, #login .modal-content .modal-body {
+    padding: 0;}
   #reservationModal .modal-content .bg-image, #reservationModal .modal-content .ftco-cover {
     background-size: cover;
     background-position: center center;

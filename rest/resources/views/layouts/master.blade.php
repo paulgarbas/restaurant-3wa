@@ -134,10 +134,11 @@ desired effect
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="{{ route('admin.dishes') }}"><i class="fa fa-link"></i> <span>Dishes</span></a></li>
+                <li><a href="{{ route('admin.dishes') }}"><i class="fa fa-link"></i> <span>Dishes</span></a></li>
                 <li><a href="{{ route('main.index') }}"><i class="fa fa-link"></i> <span>Main Categories</span></a></li>
                 <li><a href="{{ route('user.index') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
-                <li><a href="{{ route('dishes.page') }}"><i class="fa fa-link"></i> <span>Website Home</span></a></li>
+                <li><a href="{{ route('admin.reservations') }}"><i class="fa fa-link"></i> <span>Reservations</span></a></li>
+                <li><a href="{{ route('main.page') }}"><i class="fa fa-link"></i> <span>Website Home</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
                         <span class="pull-right-container">

@@ -21,12 +21,6 @@
                 <h4 class="card-title">{{ $dish->title }}</h4>
                 <p class="card-text">{{ str_limit($dish->description, 100) }}</p>
                 <p class="card-text">{{ $dish->price }} &euro;</p>
-                <a href="{{ route('dish.edit', $dish) }}" class="btn btn-warning btn-block mb-3">Edit</a>
-                <form action="{{ route('dish.delete', $dish) }}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="btn btn-danger btn-block">Delete</button>
-                </form>
             </div>
         </div>
     </div>
