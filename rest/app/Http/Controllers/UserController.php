@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -45,9 +46,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $orders = Auth::user()->orders;
+        $orders->transform(function($order, $key) {
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+        return view('user.profile', compact('orders'));
     }
 
     /**

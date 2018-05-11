@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index')->name('main.page');
 
 Auth::routes();
 
+// Admin
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::get('/', 'AdminController@index');
 
@@ -61,3 +62,8 @@ Route::post('/cartDishDelete', 'ShoppingCartController@destroy')->name('cart.dis
 Route::post('/deleteByOne', 'ShoppingCartController@deleteByOne')->name('deleteByOne');
 
 Route::post('/reservation', 'ReservationController@store')->name('reservation');
+
+Route::get('/checkout', 'OrderController@checkout')->name('checkout')->middleware('auth');
+
+// User
+Route::get('/profile', 'UserController@show')->name('user.profile')->middleware('auth'); 

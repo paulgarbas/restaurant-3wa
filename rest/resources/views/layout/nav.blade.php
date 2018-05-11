@@ -21,7 +21,7 @@
 
                         <span class="ml-1">Cart</span>
 
-                        <span class="badge badge-secondary ml-2">
+                        <span class="badge badge-secondary ml-2" id="totalQty">
                             @if (Session::has('cart'))
 
                                 {{ Session::get('cart')->totalQty }}
@@ -51,6 +51,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
+                            <a class="dropdown-item" href="{{ route('user.profile') }}">Profile</a>
                         </div>
                     </li>
                 @endguest

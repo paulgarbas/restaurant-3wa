@@ -569,7 +569,25 @@ textarea.form-control {
 }
 
 #login label {
-    width: 115px;
+    /*width: 115px;*/
+}
+
+#login .col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#login .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#login a {
+    padding: 0;
+}
+
+#user-orders {
+    color: #000;
 }
 
 

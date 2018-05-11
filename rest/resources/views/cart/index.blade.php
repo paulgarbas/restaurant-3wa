@@ -47,6 +47,7 @@
                                         <form action="{{ route('add.cart') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $dish['dish']['id'] }}">
+                                            <input type="hidden" name="from" value="from">
                                             <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i></button>
                                         </form>
                                     </td>
@@ -113,9 +114,9 @@
                                         Continue Shopping
                                     </button></td>
                                 <td>
-                                <button type="button" class="btn btn-success">
+                                <a href="{{ route('checkout') }}" type="button" class="btn btn-success">
                                     Checkout
-                                </button></td>
+                                </a></td>
                             </tr>
                     </tbody>
                 </table>

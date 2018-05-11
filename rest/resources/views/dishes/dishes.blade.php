@@ -27,11 +27,7 @@
                             </div>
                             <div class="card-footer">
                                 <a href="{{ route('single.dish', $dish) }}" class="btn btn-primary">Find Out More!</a>
-                                <form action="{{ route('add.cart') }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $dish->id }}">
-                                    <button type="submit" class="btn btn-primary">Add Dish</button>
-                                </form>
+                                <a href="#"  data-id="{{$dish->id}}" class="cart btn btn-success btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -42,6 +38,42 @@
         </div>
     </div>
 
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+
+     <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+
+            $('.cart').click(function () {
+                let dish_id = $(this).data('id');
+                let url = "/cart";
+                console.log(dish_id);
+
+                $.ajax({
+                    type:'Post',
+                    url: url,
+                    data:{id:dish_id},
+                    dataType:'json',
+                    success: function (data) {
+                        console.log(data);
+                        $('#totalQty').html(data.totalQty);
+                    },
+                    error: function (data){
+                        console.log('Error:', data);
+                    }
+                });
+            });
+        });
+    </script>
 
 
 @endsection

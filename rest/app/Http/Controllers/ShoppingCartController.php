@@ -11,6 +11,7 @@ class ShoppingCartController extends Controller
 {
     public function addToCart(Request $request) {
         $id = $request->input('id');
+        $from = $request->input('from');
         $dish = Dish::findOrFail($id);
         $oldCart = (Session::has('cart')) ? Session::get('cart') : null;
 
@@ -18,8 +19,11 @@ class ShoppingCartController extends Controller
         $shoppingCart->add($dish);
 
         $request->session()->put('cart', $shoppingCart);
-
-        return redirect()->back();
+        if (isset($from)) {
+            return redirect()->back();
+        } else {
+            return response()->json($shoppingCart);
+        }
     }
 
     public function index() {
