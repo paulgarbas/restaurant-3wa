@@ -46,6 +46,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
     Route::resource('/main', 'MainController');
 
     Route::resource('/user', 'UserController');
+
+    Route::get('/orders', 'OrderController@showToAdmin')->name('admin.orders');
 });
 
 
@@ -65,5 +67,13 @@ Route::post('/reservation', 'ReservationController@store')->name('reservation');
 
 Route::get('/checkout', 'OrderController@checkout')->name('checkout')->middleware('auth');
 
+
+
+Route::get('/addDish/{dishId}', 'CartController@addItem')->name('addTo.cart');
+
+Route::get('/cart', 'CartController@showCart')->name('show.cart');
+
+Route::delete('/cart/{cartItem}', 'CartController@destroy')->name('delete.item.fromCart');
+
 // User
-Route::get('/profile', 'UserController@show')->name('user.profile')->middleware('auth'); 
+Route::get('/profile', 'UserController@show')->name('user.profile')->middleware('auth');

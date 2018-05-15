@@ -47,7 +47,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show()
-    {
+    {   
         $orders = Auth::user()->orders;
         $orders->transform(function($order, $key) {
             $order->cart = unserialize($order->cart);

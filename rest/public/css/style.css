@@ -352,6 +352,10 @@ textarea.form-control {
   opacity: 0;
   visibility: hidden; }
 
+  .main-img img {
+      width: 100%;
+  }
+
 .bg-primary {
   background: #F96D00 !important; }
 
@@ -539,7 +543,7 @@ textarea.form-control {
     opacity: 1; }
 
 #map {
-  height: 400px;
+  height: 600px;
   width: 100%; }
   @media screen and (max-width: 768px) {
     #map {
@@ -561,7 +565,7 @@ textarea.form-control {
     right: 10px; }
     @media (min-width: 768px) {
         .col-md-6 {
-            max-width: 100%;
+            max-width: 50%;
         }
     }
 #register label, #login label {

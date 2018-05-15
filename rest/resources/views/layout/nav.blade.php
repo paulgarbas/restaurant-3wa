@@ -8,16 +8,16 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#section-offer" class="nav-link">Offer</a></li>
-                <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="/#section-about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/#section-offer" class="nav-link">Offer</a></li>
+                <li class="nav-item"><a href="/#section-menu" class="nav-link">Menu</a></li>
                 <li class="nav-item"><a href="{{ route('dishes.page') }}" class="nav-link">Dishes</a></li>
-                <li class="nav-item"><a href="#section-news" class="nav-link">News</a></li>
-                <li class="nav-item"><a href="#section-gallery" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="#section-contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/#section-news" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="/#section-gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="/#section-contact" class="nav-link">Contact</a></li>
                 <li class="nav-item">
-                    <a href="{{ route('show.cart') }}" class="nav-link">
-                        <i class="fas fa-shopping-cart"></i>
+                    <a href="{{ route('show.cart', $totalItems) }}" class="nav-link">
+                        {{-- <i class="fas fa-shopping-cart"></i>
 
                         <span class="ml-1">Cart</span>
 
@@ -29,7 +29,7 @@
                             @else 0
 
                             @endif
-                        </span>
+                        </span> --}}
                     </a>
                 </li>
                 @guest

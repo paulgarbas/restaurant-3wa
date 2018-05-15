@@ -12,7 +12,6 @@
               </div>
           @endif
         <h1 class="ftco-heading ftco-animate mb-3">Welcome To Taste Restaurant</h1>
-        <h2 class="h5 ftco-subheading mb-5 ftco-animate">A free template for Restaurant Websites Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></h2>
         <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-white btn-lg ftco-animate" data-toggle="modal" data-target="#reservationModal">Reservation</a></p>
       </div>
     </div>
@@ -32,7 +31,7 @@
         <p><a href="#" class="btn btn-secondary btn-lg">Our Story</a></p>
       </div>
       <div class="col-md-1"></div>
-      <div class="col-md-6 ftco-animate img" data-animate-effect="fadeInRight">
+      <div class="col-md-6 ftco-animate img main-img" data-animate-effect="fadeInRight">
         <img src="images/about_img_1.jpg" alt="Free Template by Free-Template.co">
       </div>
     </div>
@@ -57,122 +56,19 @@
       <div class="col-md-12">
         <div class="owl-carousel ftco-owl">
 
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Beef with Sauce</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
+        @foreach($dishes as $dish)
+            <div class="item">
+                <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
+                    <img src="images/offer_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
+                    <div class="media-body p-md-5 p-4">
+                        <h5 class="text-primary">{{ $dish->price }} &euro;</h5>
+                        <h5 class="mt-0 h4">{{ $dish->title }}</h5>
+                        <p class="mb-4">{{ $dish->description }}</p>
+                        <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_2.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Fresh Salmon Fish</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_3.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Beef Ribs</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Beef with Sauce</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_2.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Fresh Salmon Fish</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_3.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Beef Ribs</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Beef with Sauce</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_2.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Fresh Salmon Fish</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
-              <img src="images/offer_3.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-              <div class="media-body p-md-5 p-4">
-                <h5 class="text-primary">$39.50</h5>
-                <h5 class="mt-0 h4">Beef Ribs</h5>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Order Now!</a></p>
-              </div>
-            </div>
-          </div>
+        @endforeach
 
         </div>
       </div>
@@ -197,211 +93,45 @@
       <div class="col-md-12 text-center">
 
         <ul class="nav ftco-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
-          <li class="nav-item ftco-animate">
-            <a class="nav-link active" id="pills-breakfast-tab" data-toggle="pill" href="#pills-breakfast" role="tab" aria-controls="pills-breakfast" aria-selected="true">Breakfast</a>
-          </li>
-          <li class="nav-item ftco-animate">
-            <a class="nav-link" id="pills-lunch-tab" data-toggle="pill" href="#pills-lunch" role="tab" aria-controls="pills-lunch" aria-selected="false">Lunch</a>
-          </li>
-          <li class="nav-item ftco-animate">
-            <a class="nav-link" id="pills-dinner-tab" data-toggle="pill" href="#pills-dinner" role="tab" aria-controls="pills-dinner" aria-selected="false">Dinner</a>
-          </li>
+            @foreach($mains as $main)
+                {{-- @dd($main) --}}
+                @if($main->id == 1)
+                    <li class="nav-item ftco-animate">
+                        <a class="nav-link active" id="pills-{{ $main->id }}-tab" data-toggle="pill" href="#pills-{{ $main->id }}" role="tab" aria-controls="pills-{{ $main->id }}" aria-selected="true">{{ $main->title }}</a>
+                    </li>
+                @else
+                    <li class="nav-item ftco-animate">
+                        <a class="nav-link" id="pills-{{ $main->id }}-tab" data-toggle="pill" href="#pills-{{ $main->id }}" role="tab" aria-controls="pills-{{ $main->id }}" aria-selected="true">{{ $main->title }}</a>
+                    </li>
+                @endif
+            @endforeach
         </ul>
 
         <div class="tab-content text-left">
-          <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
-            <div class="row">
-              <div class="col-md-6 ftco-animate">
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_1.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Salted Fried Chicken</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$35.50</h6>
-                  </div>
+            @foreach($mains as $main)
+                @if($main->id == 1)
+                    <div class="tab-pane fade show active" id="pills-{{ $main->id }}" role="tabpanel" aria-labelledby="pills-{{ $main->id }}-tab">
+                @else
+                    <div class="tab-pane fade" id="pills-{{ $main->id }}" role="tabpanel" aria-labelledby="pills-{{ $main->id }}-tab">
+                @endif
+                    <div class="row">
+                        @foreach($main->dishes as $dish)
+                            <div class="col-md-6 ftco-animate">
+
+                                <div class="media menu-item">
+                                    <img class="mr-3" src="images/menu_1.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">{{ $dish->title }}</h5>
+                                        <p>{{ $dish->description }}</p>
+                                        <h6 class="text-primary menu-price">{{ $dish->price }} &euro;</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_2.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Italian Sauce Mushroom</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$24.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_3.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$14.50</h6>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-md-6 ftco-animate">
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_2.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Italian Sauce Mushroom</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$35.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_1.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Salted Fried Chicken</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$12.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_3.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$18.50</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="pills-lunch" role="tabpanel" aria-labelledby="pills-lunch-tab">
-            <div class="row">
-              <div class="col-md-6 ftco-animate">
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_3.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$14.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_1.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Salted Fried Chicken</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$35.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_2.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Italian Sauce Mushroom</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$24.50</h6>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-md-6 ftco-animate">
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_3.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$18.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_2.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Italian Sauce Mushroom</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$35.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_1.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Salted Fried Chicken</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$12.50</h6>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="pills-dinner" role="tabpanel" aria-labelledby="pills-dinner-tab">
-            <div class="row">
-              <div class="col-md-6 ftco-animate">
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_2.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Italian Sauce Mushroom</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$24.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_1.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Salted Fried Chicken</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$35.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_3.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$14.50</h6>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-md-6 ftco-animate">
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_3.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$18.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_2.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Italian Sauce Mushroom</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$35.50</h6>
-                  </div>
-                </div>
-
-                <div class="media menu-item">
-                  <img class="mr-3" src="images/menu_1.jpg" class="img-fluid" alt="Free Template by Free-Template.co">
-                  <div class="media-body">
-                    <h5 class="mt-0">Salted Fried Chicken</h5>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <h6 class="text-primary menu-price">$12.50</h6>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-
+            @endforeach
       </div>
     </div>
   </div>

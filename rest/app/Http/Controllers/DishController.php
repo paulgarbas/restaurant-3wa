@@ -58,8 +58,8 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        $countries = Countries::all();
-        return view('dishes.single', compact('dish', 'countries'));
+
+        return view('dishes.single', compact('dish'));
     }
 
     /**

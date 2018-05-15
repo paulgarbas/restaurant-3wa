@@ -27,7 +27,8 @@
                             </div>
                             <div class="card-footer">
                                 <a href="{{ route('single.dish', $dish) }}" class="btn btn-primary">Find Out More!</a>
-                                <a href="#"  data-id="{{$dish->id}}" class="cart btn btn-success btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
+                                {{-- <a href="#"  data-id="{{$dish->id}}" class="cart btn btn-success btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a> --}}
+                                <a href="{{ route('addTo.cart', $dish->id) }}" class="cart btn btn-success btn-product">Add to Cart</a>
                             </div>
                         </div>
                     </div>

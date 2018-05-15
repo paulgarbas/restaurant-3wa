@@ -138,6 +138,7 @@ desired effect
                 <li><a href="{{ route('main.index') }}"><i class="fa fa-link"></i> <span>Main Categories</span></a></li>
                 <li><a href="{{ route('user.index') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
                 <li><a href="{{ route('admin.reservations') }}"><i class="fa fa-link"></i> <span>Reservations</span></a></li>
+                <li><a href="{{ route('admin.orders') }}"><i class="fa fa-link"></i> <span>Orders</span></a></li>
                 <li><a href="{{ route('main.page') }}"><i class="fa fa-link"></i> <span>Website Home</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
