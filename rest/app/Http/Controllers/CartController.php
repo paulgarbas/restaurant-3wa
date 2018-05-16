@@ -45,11 +45,11 @@ class CartController extends Controller
 
         $items = $cart->cartItems;
         $totalPrice = 0;
-        $totalItems = 0;
+        $totalItems = count($cart->cartItems);
 
+        // dd($items);
         foreach ($items as $item) {
             $totalPrice += $item->dish->price;
-            $totalItems++;
         }
 
         return view('cart.newIndex', compact('cart', 'items', 'totalPrice', 'totalItems'));
@@ -60,5 +60,27 @@ class CartController extends Controller
 
         return redirect()->back();
     }
+
+    public function addItemAjax($dishId)
+    {
+        $cart = Cart::where('user_id', Auth::user()->id)->first();
+
+        if (!$cart) {
+            $cart = new Cart();
+            $cart->user_id = Auth::user()->id;
+            $cart->save();
+        }
+
+        $cartItem = new CartItem();
+
+        $cartItem->cart_id = $cart->id;
+        $cartItem->dish_id = $dishId;
+        $cartItem->save();
+
+        $items = $cart->cartItems;
+
+        return response()->json(['items' => $items]);
+    }
+
 
 }

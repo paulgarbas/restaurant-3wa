@@ -6,7 +6,6 @@
         <div class="row align-items-center justify-content-center text-center ftco-vh-100">
           <div class="col-md-12">
             <h1 class="ftco-heading ftco-animate mb-3">Jūsų užsakymai</h1>
-            <h2 class="h5 ftco-subheading mb-5 ftco-animate">A free template for Restaurant Websites Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></h2>
           </div>
         </div>
       </div>
@@ -34,8 +33,8 @@
                                 <th scope="row">{{ $order->created_at }}</th>
                                 <td>{{ $product['dish']['title'] }}</td>
                                 <td>{{ $product['dish']['description'] }}</td>
-                                <td><img src="{{ $product['dish']['image'] }}" alt="{{ $product['dish']['title'] }}" title="{{ $product['dish']['title'] }}"></td>
-                                <td>{{ $product['dish']['price'] }}</td>
+                                <td><img src="{{ $product['dish']['image'] }}" alt="{{ $product['dish']['title'] }}" title="{{ $product['dish']['title'] }}" width="100"></td>
+                                <td>{{ $product['dish']['price'] }} &euro;</td>
                             </tr>
                         @endforeach
                         {{-- <tr>

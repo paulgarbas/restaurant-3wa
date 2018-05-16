@@ -6,7 +6,6 @@
         <div class="row align-items-center justify-content-center text-center ftco-vh-100">
           <div class="col-md-12">
             <h1 class="ftco-heading ftco-animate mb-3">Dishes</h1>
-            <h2 class="h5 ftco-subheading mb-5 ftco-animate">A free template for Restaurant Websites Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></h2>
 
           </div>
         </div>
@@ -28,7 +27,7 @@
                             <div class="card-footer">
                                 <a href="{{ route('single.dish', $dish) }}" class="btn btn-primary">Find Out More!</a>
                                 {{-- <a href="#"  data-id="{{$dish->id}}" class="cart btn btn-success btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a> --}}
-                                <a href="{{ route('addTo.cart', $dish->id) }}" class="cart btn btn-success btn-product">Add to Cart</a>
+                                <a data-dish="{{ $dish->id }}" href="{{ route('addTo.cart', $dish->id) }}" class="cart btn btn-success btn-product addToCart">Add to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +44,7 @@
         crossorigin="anonymous">
     </script>
 
-     <script type="text/javascript">
+     {{-- <script type="text/javascript">
         $(document).ready(function () {
             $.ajaxSetup({
                 headers: {
@@ -74,7 +73,7 @@
                 });
             });
         });
-    </script>
+    </script> --}}
 
 
 @endsection

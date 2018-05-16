@@ -7,7 +7,6 @@
         <div class="row align-items-center justify-content-center text-center ftco-vh-100">
           <div class="col-md-12">
             <h1 class="ftco-heading ftco-animate mb-3">Dish Edit</h1>
-            <h2 class="h5 ftco-subheading mb-5 ftco-animate">A free template for Restaurant Websites Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></h2>
 
           </div>
         </div>

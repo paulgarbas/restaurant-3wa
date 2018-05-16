@@ -16,20 +16,26 @@
                 <li class="nav-item"><a href="/#section-gallery" class="nav-link">Gallery</a></li>
                 <li class="nav-item"><a href="/#section-contact" class="nav-link">Contact</a></li>
                 <li class="nav-item">
-                    <a href="{{ route('show.cart', $totalItems) }}" class="nav-link">
-                        {{-- <i class="fas fa-shopping-cart"></i>
+                    <a href="{{ route('show.cart') }}" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
 
                         <span class="ml-1">Cart</span>
 
-                        <span class="badge badge-secondary ml-2" id="totalQty">
-                            @if (Session::has('cart'))
+                        @auth
+                            <span class="badge badge-secondary ml-2" id="totalQty">
+                                {{  $totalItems }}
+                                {{-- {{ $totalItems }} --}}
+                                {{-- @if (Session::has('cart'))
 
-                                {{ Session::get('cart')->totalQty }}
+                                    {{ Session::get('cart')->totalQty }}
 
-                            @else 0
+                                @else 0
 
-                            @endif
-                        </span> --}}
+                                @endif --}}
+                            </span>
+                        @else
+                            0
+                        @endauth
                     </a>
                 </li>
                 @guest

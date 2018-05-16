@@ -75,5 +75,7 @@ Route::get('/cart', 'CartController@showCart')->name('show.cart');
 
 Route::delete('/cart/{cartItem}', 'CartController@destroy')->name('delete.item.fromCart');
 
+Route::get('/addDishAjax/{dishId}', 'CartController@addItemAjax')->name('add.ajax');
+
 // User
 Route::get('/profile', 'UserController@show')->name('user.profile')->middleware('auth');

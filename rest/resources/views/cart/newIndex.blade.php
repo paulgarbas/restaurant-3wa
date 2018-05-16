@@ -111,7 +111,7 @@
                                         Continue Shopping
                                     </button></td>
                                 <td>
-                                <a href="#" type="button" class="btn btn-success">
+                                <a href="{{ route('checkout') }}" type="button" class="btn btn-success">
                                     Checkout
                                 </a></td>
                             </tr>

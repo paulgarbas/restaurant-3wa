@@ -50,7 +50,7 @@
     </div>
     <div class="row ftco-animate">
       <div class="col-md text-left">
-        <p>&copy; Taste 2018. All Rights Reserved.  Made with <span class="icon-heart text-danger"></span>  by <a href="https://free-template.co/">Free-Template.co</a></p>
+        <p>&copy; Taste 2018. All Rights Reserved.</p>
       </div>
     </div>
   </div>
