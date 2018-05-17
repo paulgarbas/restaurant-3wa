@@ -16,8 +16,8 @@ Route::get('/', 'HomeController@index')->name('main.page');
 Auth::routes();
 
 // Admin
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
-    Route::get('/', 'AdminController@index');
+Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function() {
+    Route::get('/', 'AdminController@index')->name('admin');
 
     Route::get('/dishes', 'DishController@admin')->name('admin.dishes');
 
@@ -47,7 +47,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function() {
 
     Route::resource('/user', 'UserController');
 
-    Route::get('/orders', 'OrderController@showToAdmin')->name('admin.orders');
+    Route::get('/orders', 'OrderController@showOrdersToAdmin')->name('admin.orders');
+
+    Route::get('orders/orderItems/{order}', 'OrderController@showOrderItemsToAdmin')->name('admin.orderItems');
 });
 
 
@@ -77,5 +79,9 @@ Route::delete('/cart/{cartItem}', 'CartController@destroy')->name('delete.item.f
 
 Route::get('/addDishAjax/{dishId}', 'CartController@addItemAjax')->name('add.ajax');
 
+Route::get('/profile/orders', 'OrderController@showOrders')->name('user.profile.orders');
+
+Route::get('/profile/items/{order}', 'OrderController@showOrderItems')->name('user.profile.orderItems');
+
 // User
-Route::get('/profile', 'UserController@show')->name('user.profile')->middleware('auth');
+// Route::get('/profile', 'UserController@show')->name('user.profile')->middleware('auth');

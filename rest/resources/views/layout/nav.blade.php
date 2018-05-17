@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 @guest
-                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link" data-toggle="modal" data-target="#login">{{ __('Login') }}</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#login">{{ __('Login') }}</a></li>
                     <li class="nav-item"><a href="{{ route('register') }}" class="nav-link" data-toggle="modal" data-target="#register">{{ __('Register') }}</a></li>
                 @else
                     <li class="nav-item dropdown">
@@ -48,6 +48,11 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @if (Auth::user()->isAdmin())
+                                <a class="dropdown-item" href="{{ route('admin') }}">Admin panel</a>
+                            @else
+                                <a class="dropdown-item" href="{{ route('user.profile.orders') }}">Profile</a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -57,7 +62,6 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                            <a class="dropdown-item" href="{{ route('user.profile') }}">Profile</a>
                         </div>
                     </li>
                 @endguest
@@ -79,59 +83,59 @@
                         <small>CLOSE </small><span aria-hidden="true">&times;</span>
                       </button>
                       <h1 class="mb-4">Login</h1>
+                          <form method="POST" action="{{ route('login') }}">
+                              @csrf
 
+                              <div class="col-md-12 form-group">
+                                  <label for="email">{{ __('E-Mail Address') }}</label>
 
-                              <form method="POST" action="{{ route('login') }}">
-                                  @csrf
+                                  <div class="col-md-6">
+                                      <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
-                                  <div class="col-md-12 form-group">
-                                      <label for="email">{{ __('E-Mail Address') }}</label>
+                                      @if ($errors->has('email'))
+                                          <span class="invalid-feedback">
+                                              <strong>{{ $errors->first('email') }}</strong>
+                                          </span>
+                                      @endif
+                                  </div>
+                              </div>
 
-                                      <div class="col-md-6">
-                                          <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                              <div class="col-md-12 form-group">
+                                  <label for="password">{{ __('Password') }}</label>
 
-                                          @if ($errors->has('email'))
-                                              <span class="invalid-feedback">
-                                                  <strong>{{ $errors->first('email') }}</strong>
-                                              </span>
-                                          @endif
+                                  <div class="col-md-6">
+                                      <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                      @if ($errors->has('password'))
+                                          <span class="invalid-feedback">
+                                              <strong>{{ $errors->first('password') }}</strong>
+                                          </span>
+                                      @endif
+                                  </div>
+                              </div>
+
+                              <div class="col-md-12 form-group">
+                                  <div class="col-md-6 offset-md-4">
+                                      <div class="checkbox">
+                                          <label>
+                                              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
+                                          </label>
                                       </div>
                                   </div>
+                              </div>
 
-                                  <div class="col-md-12 form-group">
-                                      <label for="password">{{ __('Password') }}</label>
+                              <div class="col-md-12 form-group">
+                                  <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                      {{ __('Login') }}
+                                  </button>
 
-                                      <div class="col-md-6">
-                                          <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                  <a class="btn btn-link" href="{{ route('password.request') }}">
+                                      {{ __('Forgot Your Password?') }}
+                                  </a>
+                              </div>
+                          </form>
 
-                                          @if ($errors->has('password'))
-                                              <span class="invalid-feedback">
-                                                  <strong>{{ $errors->first('password') }}</strong>
-                                              </span>
-                                          @endif
-                                      </div>
-                                  </div>
 
-                                  <div class="col-md-12 form-group">
-                                      <div class="col-md-6 offset-md-4">
-                                          <div class="checkbox">
-                                              <label>
-                                                  <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                                              </label>
-                                          </div>
-                                      </div>
-                                  </div>
-
-                                  <div class="col-md-12 form-group">
-                                      <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                          {{ __('Login') }}
-                                      </button>
-
-                                      <a class="btn btn-link" href="{{ route('password.request') }}">
-                                          {{ __('Forgot Your Password?') }}
-                                      </a>
-                                  </div>
-                              </form>
 
                   </div>
               </div>

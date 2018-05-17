@@ -47,7 +47,6 @@ class CartController extends Controller
         $totalPrice = 0;
         $totalItems = count($cart->cartItems);
 
-        // dd($items);
         foreach ($items as $item) {
             $totalPrice += $item->dish->price;
         }

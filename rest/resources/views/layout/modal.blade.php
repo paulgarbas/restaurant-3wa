@@ -16,7 +16,7 @@
 
                 <div class="col-md-6 form-group">
                   <label for="m_fname">First Name</label>
-                  <input type="text" class="form-control" id="m_fname" name="name">
+                  <input type="text" class="form-control" id="m_fname" name="name" value="{{ Auth::user() ? Auth::user()->name : old('name') }}">
                 </div>
                 @if ($errors->has('name'))
                     <div class="alert alert-danger mt-12 col-sm-12">
@@ -26,13 +26,13 @@
 
                 <div class="col-md-6 form-group">
                   <label for="m_lname">Last Name</label>
-                  <input type="text" class="form-control" id="m_lname" name="surname">
+                  <input type="text" class="form-control" id="m_lname" name="surname" value="{{ Auth::user() ? Auth::user()->surname : old('surname') }}">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12 form-group">
                   <label for="m_email">Email</label>
-                  <input type="email" class="form-control" id="m_email" name="email">
+                  <input type="email" class="form-control" id="m_email" name="email" value="{{ Auth::user() ? Auth::user()->email : old('email') }}">
                 </div>
               </div>
               <div class="row">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-md-6 form-group">
                   <label for="m_phone">Phone</label>
-                  <input type="text" class="form-control" id="m_phone" name="phone">
+                  <input type="text" class="form-control" id="m_phone" name="phone" value="{{ Auth::user() ? Auth::user()->phone : old('phone') }}">
                 </div>
               </div>
 
